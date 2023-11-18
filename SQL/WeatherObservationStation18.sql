@@ -6,5 +6,6 @@
 --  happens to equal the maximum value in Western Longitude (LONG_W in STATION).
 -- Query the Manhattan Distance between points  and  and round it to a scale of  decimal places.
 
-SELECT ROUND((MAX(LAT_N) - MIN(LAT_N) + MAX(LONG_W) - MIN(LONG_W)), 4) AS D
-FROM STATION
+select round(
+abs(min(lat_n) - max(lat_n)) + abs(min(long_w)-max(long_w)),4)
+from station
